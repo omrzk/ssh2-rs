@@ -39,7 +39,7 @@ fn ops() {
     assert_eq!(v, b"foo");
 
     assert_eq!(sftp.stat(&td.path().join("foo")).unwrap().size, Some(0));
-    v.truncate(0);
+    v.clear();
     foo.read_to_end(&mut v).unwrap();
     assert_eq!(v, Vec::new());
 
